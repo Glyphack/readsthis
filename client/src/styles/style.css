@@ -1,0 +1,348 @@
+:root {
+	font-family: "Roboto", sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+h1 {
+	font-size: 2.5em;
+	line-height: 1.1;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: 1.8em;
+	color: #646cff;
+	margin-top: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+h3 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+}
+
+button {
+	border-radius: 4px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: #1a1a1a;
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+
+button:hover {
+	border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+#app {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+	width: 100%;
+}
+
+/* Upload area */
+.upload-container {
+	margin: 2rem 0;
+	padding: 1.5rem;
+	border: 2px dashed #646cff;
+	border-radius: 8px;
+}
+
+/* Sharing Area */
+#sharingArea {
+	margin: 2rem 0;
+	padding: 1.5rem;
+	background-color: rgba(100, 108, 255, 0.1);
+	border-radius: 8px;
+	border: 1px solid rgba(100, 108, 255, 0.3);
+	text-align: left;
+}
+
+.sharing-form h3 {
+	margin-top: 0;
+	color: #646cff;
+}
+
+.input-group {
+	display: flex;
+	gap: 10px;
+	margin-top: 1rem;
+}
+
+#emailInput,
+#manageEmailInput {
+	flex: 1;
+	padding: 0.5rem;
+	border: 1px solid rgba(100, 108, 255, 0.3);
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: inherit;
+}
+
+
+.share-link {
+	display: flex;
+	gap: 10px;
+	margin-top: 1rem;
+}
+
+.share-link input {
+	flex: 1;
+	padding: 0.5rem;
+	border: 1px solid rgba(100, 108, 255, 0.3);
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: inherit;
+	font-family: monospace;
+}
+
+.share-link button {
+	background-color: #646cff;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.share-link button:hover {
+	background-color: #535bf2;
+}
+
+/* Management Page */
+.manage-container {
+	margin: 2rem 0;
+	padding: 1.5rem;
+	background-color: rgba(100, 108, 255, 0.1);
+	border-radius: 8px;
+	border: 1px solid rgba(100, 108, 255, 0.3);
+}
+
+.manage-form {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 1rem;
+}
+
+/* Action Links */
+.actions {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+}
+
+.manage-link,
+.home-link {
+	display: inline-block;
+	background-color: #646cff;
+	color: white;
+	text-decoration: none;
+	padding: 0.5rem 1.5rem;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.manage-link:hover,
+.home-link:hover {
+	background-color: #535bf2;
+}
+
+/* Result Messages */
+.info,
+.success,
+.error {
+	padding: 1rem;
+	border-radius: 4px;
+	margin: 1rem 0;
+	text-align: center;
+}
+
+.info {
+	background-color: rgba(0, 120, 200, 0.1);
+	color: #0078c8;
+}
+
+.success {
+	background-color: rgba(0, 200, 100, 0.1);
+	color: #00c864;
+}
+
+.error {
+	color: #ff6464;
+	background-color: rgba(255, 100, 100, 0.1);
+}
+
+/* Feed Display */
+#feedDisplay {
+	text-align: left;
+}
+
+.feed-group {
+	margin-bottom: 2rem;
+	padding: 1rem;
+	background-color: rgba(100, 108, 255, 0.1);
+	border-radius: 8px;
+}
+
+.group-title {
+	text-align: center;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid rgba(100, 108, 255, 0.3);
+}
+
+.feed-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+.feed-item {
+	margin: 1rem 0;
+	padding: 1rem;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 4px;
+	transition: transform 0.2s ease;
+}
+
+.feed-item:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feed-content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.feed-url {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin: 0.5rem 0;
+	overflow-x: auto;
+}
+
+.feed-url code {
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 0.3rem 0.6rem;
+	border-radius: 4px;
+	font-family: monospace;
+	flex: 1;
+}
+
+.website-link {
+	align-self: flex-start;
+	padding: 0.3rem 0.6rem;
+}
+
+.description {
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.6);
+	margin: 0.5rem 0;
+}
+
+.share-section {
+	margin: 2rem 0;
+	display: flex;
+	justify-content: center;
+}
+
+.share-button {
+	background-color: #646cff;
+	color: white;
+	font-size: 1.1em;
+	padding: 0.8em 1.5em;
+}
+
+.share-button:hover {
+	background-color: #535bf2;
+}
+
+.feed-divider {
+	height: 1px;
+	background-color: rgba(100, 108, 255, 0.3);
+	margin: 1rem 0 2rem 0;
+	width: 100%;
+}
+
+.empty-message,
+.empty-group {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.6);
+	margin: 2rem 0;
+	font-style: italic;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+
+	button {
+		background-color: #f9f9f9;
+	}
+
+	#emailInput,
+	#manageEmailInput,
+	.share-link input {
+		background-color: rgba(255, 255, 255, 0.9);
+		color: #333;
+	}
+
+	.feed-group {
+		background-color: rgba(100, 108, 255, 0.1);
+	}
+
+	.feed-item {
+		background-color: rgba(0, 0, 0, 0.03);
+	}
+
+	.feed-url code {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.description {
+		color: rgba(0, 0, 0, 0.6);
+	}
+
+	.empty-message,
+	.empty-group {
+		color: rgba(0, 0, 0, 0.6);
+	}
+
+	.info {
+		color: #0069b3;
+	}
+
+	.success {
+		color: #00a655;
+	}
+}

@@ -1,0 +1,2 @@
+ALTER TABLE shares ADD COLUMN slug TEXT DEFAULT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS idx_shares_slug ON shares (slug);

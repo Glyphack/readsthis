@@ -1,0 +1,40 @@
+{
+  "name": "readsthis",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bunx --bun vite --config client/vite.config.ts",
+    "dev:server": "npm run types && bunx wrangler dev --cwd ./server",
+    "types": "npx wrangler types --cwd server/",
+    "test": "bun test",
+    "check": "tsc && npm run build",
+    "build": "tsc && bunx --bun vite build --config client/vite.config.ts",
+    "deploy_server": "npm run types && tsc && bunx wrangler deploy --cwd ./server",
+    "deploy_client": "npm run build && bunx wrangler pages deploy --cwd ./client",
+    "deploy": "npm run deploy_client && npm run deploy_server",
+    "migrate:local": "npx wrangler d1 migrations apply readsthis --cwd ./server/",
+    "migrate": "npx wrangler d1 migrations apply readsthis --cwd ./server/ --remote",
+    "format": "bunx prettier --write \"**/*.{ts,tsx,js,jsx}\""
+  },
+  "dependencies": {
+    "@sentry/cloudflare": "^9.15.0",
+    "opml": "^0.5.0",
+    "resend": "^4.2.0",
+    "uuid": "^9.0.1",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.23",
+    "@cloudflare/workers-types": "^4.20240405.0",
+    "@types/bun": "latest",
+    "@types/node": "^20.8.2",
+    "@types/uuid": "^9.0.8",
+    "@types/xmldom": "^0.1.34",
+    "miniflare": "^4.20250428.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.4.8",
+    "vitest": "~3.0.0",
+    "prettier": "^3.3.1"
+  }
+}
